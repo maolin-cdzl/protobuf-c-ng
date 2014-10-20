@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.8.12)
 project(protobuf-c-ng)
 set(PROTOBUF_C_VERSION_MAJOR 0)
 set(PROTOBUF_C_VERSION_MINOR 14)
