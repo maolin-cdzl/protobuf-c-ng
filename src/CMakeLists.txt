@@ -20,7 +20,7 @@ if ( BUILD_PROTOBUF_C_COMPILER )
         google/protobuf/compiler/c/c_message_field.cc
         google/protobuf/compiler/c/main.cc
         google/protobuf/compiler/c/c_bytes_field.cc)
-    add_executable(protoc-c-ng ${PROTOC_C_SOURCES})
+    add_executable(protoc-c ${PROTOC_C_SOURCES})
     set_target_properties(protoc-c PROPERTIES OUTPUT_NAME protoc-c-ng)
 	target_include_directories(protoc-c PRIVATE ${PROTOBUF_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR})
     target_link_libraries(protoc-c PUBLIC ${PROTOBUF_LIBRARY}
@@ -56,14 +56,14 @@ set(BUILD_PROTOBUF_C_SHARED_LIB OFF
 
 if ( WITH_PROTOBUF_C_RPC )
     set(PROTOBUF_C_SOURCES
-        google/protobuf-c/protobuf-c-dispatch.c
-        google/protobuf-c/protobuf-c-data-buffer.c
-        google/protobuf-c/protobuf-c-rpc.c
-        google/protobuf-c/protobuf-c.c)
+        google/protobuf-c-ng/protobuf-c-dispatch.c
+        google/protobuf-c-ng/protobuf-c-data-buffer.c
+        google/protobuf-c-ng/protobuf-c-rpc.c
+        google/protobuf-c-ng/protobuf-c.c)
 else()
     set(PROTOBUF_C_SOURCES
-        google/protobuf-c/protobuf-c-data-buffer.c
-        google/protobuf-c/protobuf-c.c)
+        google/protobuf-c-ng/protobuf-c-data-buffer.c
+        google/protobuf-c-ng/protobuf-c.c)
 endif()
 
 if ( BUILD_PROTOBUF_C_STATIC_LIB )
@@ -105,14 +105,14 @@ target_include_directories(protobuf-c
 if ( BUILD_PROTOBUF_C_STATIC_LIB OR BUILD_PROTOBUF_C_SHARED_LIB )
     if ( WITH_PROTOBUF_C_RPC  )
         set(PROTOBUF_C_PUBLIC_HEADERS
-            google/protobuf-c/protobuf-c.h
-            google/protobuf-c/protobuf-c-private.h
-            google/protobuf-c/protobuf-c-dispatch.h
-            google/protobuf-c/protobuf-c-rpc.h)
+            google/protobuf-c-ng/protobuf-c.h
+            google/protobuf-c-ng/protobuf-c-private.h
+            google/protobuf-c-ng/protobuf-c-dispatch.h
+            google/protobuf-c-ng/protobuf-c-rpc.h)
     else()
         set(PROTOBUF_C_PUBLIC_HEADERS
-            google/protobuf-c/protobuf-c.h
-            google/protobuf-c/protobuf-c-private.h)
+            google/protobuf-c-ng/protobuf-c.h
+            google/protobuf-c-ng/protobuf-c-private.h)
     endif()
     install(FILES ${PROTOBUF_C_PUBLIC_HEADERS} DESTINATION
         ${PROTOBUF_C_INSTALL_INCLUDEDIR})

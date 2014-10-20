@@ -22,8 +22,8 @@ function(process_libprotobuf_c_pc)
     set(libdir ${PROTOBUF_C_INSTALL_LIBDIR})
     set(includedir ${PROTOBUF_C_INSTALL_INCLUDEDIR})
     set(VERSION ${PROTOBUF_C_VERSION})
-    configure_file(libprotobuf-c.pc.in
-        ${CMAKE_ROOT_OUTPUT_DIRECTORY}/pkgconfig/libprotobuf-c.pc @ONLY)
+    configure_file(libprotobuf-c-ng.pc.in
+        ${CMAKE_ROOT_OUTPUT_DIRECTORY}/pkgconfig/libprotobuf-c-ng.pc @ONLY)
     install(DIRECTORY ${CMAKE_ROOT_OUTPUT_DIRECTORY}/pkgconfig DESTINATION
         ${PROTOBUF_C_INSTALL_LIBDIR})
 endfunction()
