@@ -98,7 +98,7 @@ elseif ( BUILD_PROTOBUF_C_SHARED_LIB )
 endif()
 
 target_include_directories(protobuf-c 
-	PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/google
+	PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
 	PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/google/protobuf-c
 	)
 
